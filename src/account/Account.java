@@ -7,7 +7,7 @@ package account;
 
 /**
  * date: March 2nd
- * @author Sivagama
+ * @author Modified By Andrew Dantes
  */
 public class Account {
 
@@ -15,14 +15,27 @@ public class Account {
         private double balance;
         private double interestRate=0.23;
         private String user;
- 
+        private double intBalance;
+        private double interestMonth = 0.03;
+        
+        public void totalBalance(){
+            this.intBalance = balance * interestMonth;
+        }
+        
+        public double getIntBalance(){
+            totalBalance();
+            return intBalance;
+        }
+        
+        
      /**constructor that takes the initial balance
-      * @param initialBalance 
+      * @param initialBalance
       */
         public Account(double initialBalance,String givenUser)
         {
-            balance=initialBalance;
-            user=givenUser;
+            balance = initialBalance;
+            user = givenUser;
+        
             //Note that the initial balance must be greater than 50.       
         }
 
